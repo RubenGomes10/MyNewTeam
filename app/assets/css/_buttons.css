@@ -1,0 +1,196 @@
+/* -------------- Buttons styles------------------*/
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.btn-circle > i {
+  padding: 7px 4px 5px 2px;
+  font-size: 1.6em;
+}
+
+.btn-circle.push-right {
+  margin-left: 0;
+  margin-left: 91%;
+}
+
+.btn-circle-fixed {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 50%;
+    position:fixed;
+    z-index: 100;
+}
+
+.btn-circle-fixed > i {
+  padding: 7px 4px 5px 2px;
+  font-size: 1.6em;
+}
+
+.btn-circle-fixed.push-right{
+  margin-left: 0;
+  margin-left: 91%;
+}
+
+.btn-outline {
+    color: inherit;
+    background-color: transparent;
+    transition: all .5s;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-default:hover, .btn-default:focus,
+.btn-default.active:hover, .btn-default.active:focus,
+.btn-default.active, .btn-default:active {
+  color: #fff;
+  background-color: #298570;
+  border-color: #206757;
+}
+
+.btn-add{
+  padding: 7px 4px 5px 5px
+}
+
+.btn-back-home,.btn-add {
+  color: #fff;
+  background-color: #298570;
+}
+
+
+.btn-register{
+  color: #fff;
+  background-color: #298570;
+}
+
+.btn-instagram {
+  color: #fff;
+  background-color: #517fa4;
+  border: 1px solid #456c8c;
+}
+
+.btn-google-plus{
+  color: #fff;
+  background-color: #db3236;
+  border: 1px solid #d42529;
+}
+
+.btn-facebook{
+  color: #fff;
+  background-color: #466ab4;
+  border: 1px solid #3b5998;
+}
+
+.btn-twitter{
+  color: #fff;
+  background-color: #00aced;
+  border: 1px solid #0090c6;
+}
+
+.btn-linked-in{
+  color: #fff;
+  background-color: #0077b5;
+  border: 1px solid #005d8e;
+}
+
+.btn-github{
+  color: #fff;
+  background-color:#767676;
+  border: 1px solid #626262;
+}
+
+/* -------------- Buttons focus & hover events ------------------*/
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+.btn-back-home:hover, .btn-add:hover {
+  color: #fff;
+  background-color: #206757;
+}
+
+.btn-register:focus,
+.btn-register:hover{
+  color: #fff;
+  background-color: #206757;
+}
+
+.btn-instagram:hover,
+.btn-instagram:focus {
+  color: #fff;
+  background-color: #303030;
+}
+
+.btn-google-plus:hover,
+.btn-google-plus:focus {
+  color: #fff;
+  background-color: #811719;
+}
+
+.btn-facebook:hover,
+.btn-facebook:focus{
+  color: #fff;
+  background-color: #2b406e;
+}
+
+.btn-twitter:hover,
+.btn-twitter:focus{
+  color: #fff;
+  background-color: #00658b;
+}
+
+.btn-linked-in:hover,
+.btn-linked-in:focus{
+  color: #fff;
+  background-color: #004367;
+}
+
+.btn-github:hover,
+.btn-github:focus{
+  color: #fff;
+  background-color: #3b3b3b;
+}
+
+/* -------------- Buttons Media query's events ------------------*/
+
+@media(max-width:768px) {
+  .btn-circle-fixed.push-right{
+    margin-left: 80%;
+  }
+}
+
+@media(max-width:480px) {
+  .btn-circle-fixed.push-right{
+    margin-left: 89%;
+  }
+}

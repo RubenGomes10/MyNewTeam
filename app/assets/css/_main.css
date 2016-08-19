@@ -1,0 +1,198 @@
+/* Space out content a bit */
+body {
+    padding-bottom: 20px;
+    font-family: "roboto-condensed",sans-serif;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+footer {
+  text-align: center;
+  padding-top: 30px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+a, a:hover, a:focus{
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.btn{
+  transition: all 0.5s;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+
+  .navbar-default .navbar-brand{
+    position: fixed;
+  }
+
+}
+
+/* Navbar */
+
+.navbar-default .navbar-brand {
+  color: #0D6661;
+  letter-spacing : 3px;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #19948A;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover{
+    background-color: #298570;
+}
+
+.navbar-default .navbar-toggle .icon-bar,
+.navbar-default .navbar-toggle .icon-bar:focus,
+.navbar-default .navbar-toggle .icon-bar:hover{
+  background-color: #fff;
+}
+
+.nav>li>a{
+  color: #fff;
+}
+
+.nav>li.active>a {
+text-decoration: none;
+background-color: #298570;
+color: #fff;
+}
+
+.nav>li>a:hover, .nav>li>a:focus{
+   text-decoration: none;
+   background-color: #298570;
+   color: #fff;
+   transition: all 0.3s;
+}
+
+.nav.navbar-top-links > li > a:hover,
+.nav.navbar-top-links > li > a:focus{
+  border-radius: 40px;
+}
+
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+  background-color: #298570;
+  border-radius: 40px;
+}
+
+/*Login  */
+
+.loginButtons{
+  padding-top: 10px;
+  border-top : 1px solid lightgray;
+}
+
+.loginButtons > .btn{
+  border-radius: 15px;
+  margin: 2px auto;
+}
+
+/* Modals */
+
+.myModals{
+  opacity: 0.8;
+  background-color: #47A370;
+  color: #fff;
+  text-shadow: 0 0;
+  text-align: justify;
+}
+
+.myModals .header{
+  text-transform: uppercase;
+}
+
+.myModals .modal-footer .btn:focus,
+.myModals .modal-footer .btn:hover{
+  transition: all 0.5s;
+}
+
+/* Customize Modals */
+@media (min-width: 768px) {
+  .myModals{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+  }
+}
+
+
+/*LOGIN & AUTH*/
+.form-login-heading {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 80px;
+  color: #FFF;
+  font-style: 700;
+}
+
+.back-authorize {
+  text-align: center;
+  cursor: pointer;
+  color: #FFF;
+  font-style: 700;
+}

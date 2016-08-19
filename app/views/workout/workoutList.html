@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Workouts</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<div class="row">
+    <div class="col-lg-12" ng-controller="GetWorkoutsCtrl">
+        <div class="row">
+            <table class="table" style="width: 800px">
+                <tr style="background: rgba(13, 102, 97, 0.64)">
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>State</th>
+                </tr>
+                <tr ng-repeat="workout in data">
+                    <td title="'Title'" filter="{ title: 'text'}" sortable="'title'" >
+                        <a href="app/workout/{{workout._id}}">{{workout.title}}</a>
+                    </td>
+                    <td title="'Workout Date'" filter="{ workoutDate: 'text'}" sortable="'workoutDate'">{{workout.workoutDate}}</td>
+                    <td title="'State'" filter="{ state : 'text'}" sortable="'state'">{{workout.state}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

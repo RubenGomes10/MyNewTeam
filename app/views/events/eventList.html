@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Events:</h1>
+    </div>
+</div>
+<div class="row" ng-controller="GetEventsCtrl">
+    <table class="table" style="width: 800px">
+        <tr style="background: rgba(13, 102, 97, 0.64)">
+            <th>Name</th>
+        </tr>
+        <tr ng-repeat="event in data">
+            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'" >
+                <a href="app/events/{{event._id}}">{{event.name}}</a>
+            </td>
+        </tr>
+    </table>
+</div>

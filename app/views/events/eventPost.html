@@ -1,0 +1,35 @@
+<div class="col-lg-12" ng-controller="PostEventCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Event</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-13">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please fill the event name and description for submission</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="userForm" role="form" ng-submit="createEvent()">
+                        <fieldset>
+                            <div class="left_division">
+                                <div class="form-group">
+                                    <label>Name</label>
+                                    <input class="form-control" name="name" ng-model="event.name" type="text" autofocus>
+                                </div>
+                            </div>
+                            <div class="right_division">
+                                <div class="form-group">
+                                    <label>Event description:</label>
+                                    <textarea class="form-control" rows="8" ng-model="event.description"></textarea>
+                                </div>
+                            </div>
+                            <button href="dashboard.events" type='submit' class="btn btn-lg btn-success btn-block">Submit Event</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

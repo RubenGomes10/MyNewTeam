@@ -1,0 +1,39 @@
+<div class="col-lg-20" ng-controller="GetWorkoutCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{workout.title}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-13">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div>
+                        <fieldset>
+                            <div class="left_division">
+                                <div>
+                                    <label>Duration (Hours):</label>
+                                    <p>{{workout.duration}}</p>
+                                </div>
+                                <div>
+                                    <label>Workout Date::</label>
+                                    <p>{{workout.workoutDate}}</p>
+                                </div>
+                                <div>
+                                    <label>State:</label>
+                                    <p>{{workout.state}}</p>
+                                </div>
+                            </div>
+                            <div class="right_division">
+                                <div class="form-group">
+                                    <label>Workout description:</label>
+                                    <textarea readonly style="resize:none" class="form-control" rows="8">{{workout.description}}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

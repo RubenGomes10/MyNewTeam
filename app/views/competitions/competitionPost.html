@@ -1,0 +1,61 @@
+<div class="col-lg-15" ng-controller="PostCompetitionCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Competition</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-13">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please fill the competition information for registration</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="userForm" role="form" ng-submit="createCompetition()">
+                        <fieldset>
+                            <div class="left_division">
+                                <label>Competition Information:</label>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Name" name="name" ng-model="competition.name" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="state_dropdown" ng-model="competition.state" type="text">
+                                        <option value="Active">Active</option>
+                                        <option value="Scheduled">Scheduled</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Canceled">Canceled</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" data-date-format="yyyy-mm-dd"  data-provide="datepicker"
+                                           placeholder="Scheduled Date" ng-model="competition.scheduledDate" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label>Enter competition description here:</label>
+                                    <textarea class="form-control" rows="8" ng-model="competition.description"></textarea>
+                                </div>
+                            </div>
+                            <div class="right_division">
+                                <label>Events to be on the competition:</label>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label style="display:inline-block; width: 50%" ng-repeat="event in events | orderBy:'event.name'">
+                                            <input type="checkbox" ng-checked="exists(event)" ng-click="toggle(event)" value="{{event._id}}"/>
+                                            {{ event.name }}
+                                        </label>
+                                    </div>
+                                </div>
+                                <label>Place:</label>
+                                <select class="form-control" ng-model="competition.place">
+                                    <option ng-repeat="place in places" value="{{place._id}}">{{place.name}}</option>
+                                </select>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button type='submit' class="btn btn-lg btn-success btn-block">Enter Competition</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

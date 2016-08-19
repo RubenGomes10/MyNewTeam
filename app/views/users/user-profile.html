@@ -1,0 +1,103 @@
+<div class="row">
+  <div class="panel top-panel">
+    <div class="panel-body">
+      <h4 class="text-center"> User Profile </h4>
+      <div class="sub-title-or-separator">
+        <h6 class="text">{{vm.user.name}}</h6>
+        <hr>
+      </div>
+      <div class="profile-wrapper">
+        <div class="left-row">
+          <div class="thumbnail">
+              <div class="user-card-image view view-first">
+                <a href="#" role="button">
+                  <img src="{{vm.user.img}}" ng-show="vm.existImg" alt="{{vm.user.name}}"/>
+                  <img ng-hide="vm.existImg" src="assets/img/user-default-img.png" alt="{{vm.user.name}}"/>
+                  <h2>{{vm.user.name}}</h2>
+                </a>
+                <div class="mask"></div>
+              </div>
+              <div class="caption">
+                  <div class="banner"></div>
+                  <p class="descripition-header">{{vm.user.role}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Birthday</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.birthday | date}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Phone Number</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.phone}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text"></h6>
+                    <hr>
+                  </div>
+                  <h4 class="descripition-header">Address Info</h4>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Nif</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.documentation.nif}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Citizen Card</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.documentation.citizen_card}}</p>
+                  <div ng-if="vm.hasDL">
+                    <div class="sub-title-or-separator">
+                      <h6 class="text">Driver License</h6>
+                      <hr>
+                    </div>
+                    <p><span>&#45;</span>{{vm.user.documentation.driving_license}}</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="right-row">
+          <div class="thumbnail">
+              <div class="caption">
+                  <h4 class="descripition-header">Address Info</h4>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Street</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.address.street}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Zip Code</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.address.zip_code}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">City</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.address.city}}</p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Country</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.user.address.country}}</p>
+              </div>
+          </div>
+          <div class="thumbnail">
+              <div class="caption">
+                  <h4 class="descripition-header">Account Info</h4>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Email</h6>
+                    <hr>
+                  </div>
+                  <p><a href="mailto:{{vm.account.local.email}}"><span>&#45;</span>{{vm.account.local.email}}</a></p>
+                  <div class="sub-title-or-separator">
+                    <h6 class="text">Username</h6>
+                    <hr>
+                  </div>
+                  <p><span>&#45;</span>{{vm.account.local.username}}</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

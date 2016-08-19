@@ -1,0 +1,50 @@
+<div class="col-lg-20">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{vm.club.name}} ({{vm.club.acronym}})</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-13">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div>
+                        <fieldset>
+                            <div class="left_division">
+                                <div style="padding-bottom: 20px">
+                                    <label>Address Info</label>
+                                    <div>
+                                        <label>Street</label>
+                                        <p>{{vm.club.address.street}}</p>
+                                        <label>Zip-Code</label>
+                                        <p>{{vm.club.address.zip_code}}</p>
+                                        <label>City</label>
+                                        <p>{{vm.club.address.city}}</p>
+                                        <label>Country</label>
+                                        <p>{{vm.club.address.country}}</p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Location</label>
+                                    <div  id="map" style="height: 300px; width: 450px">
+                                      {{vm.setMap(vm.club.google.latitude, vm.club.google.longitude)}}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="right_division">
+                                <div style="padding-bottom: 20px">
+                                    <img id="logo" style='width: 200px; height: 200px' />
+                                </div>
+                                <div>
+                                    <label>Club description:</label>
+                                    <textarea readonly style="resize:none" class="form-control" rows="14">{{vm.club.description}}</textarea>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

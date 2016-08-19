@@ -1,0 +1,132 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse collapse">
+        <ul class="nav in" id="side-menu">
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.home"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.clubs"><i class="fa fa-trophy fa-fw"></i> Clubs<span></span></a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated" ng-if="vm.is('Admin')">
+                <a ui-sref="dashboard.registerClub"><i class="fa fa-home fa-fw"></i> Add Club</a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated">
+                <a ui-sref="dashboard.events"><i class="fa fa-dribbble fa-dw"></i> Events</a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated" ng-if="vm.is('Admin')">
+                <a ui-sref="dashboard.submitEvent"><i class=""></i> Add Event</a>
+            </li>
+            <li ui-sref-active="active" ng-if="vm.is('Admin')">
+                <a ui-sref="dashboard.form"><i class="fa fa-bar-chart-o fa-fw"></i> Admin<span></span></a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated">
+                <a ui-sref="dashboard.competitions"><i class="fa fa-calendar fa-fw"></i> Competitions</a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated" ng-if="!vm.is('Admin')">
+                <a ui-sref="dashboard.workouts"><i class="fa fa-sort-amount-asc fa-fw"></i> Workouts</a>
+            </li>
+            <li ui-sref-active="active" ng-show="vm.isAuthenticated" ng-if="vm.is('Coach')">
+                <a ui-sref="dashboard.submitWorkout"><i class="fa fa-sort-amount-asc fa-fw"></i> Submit Workouts</a>
+            </li>
+
+            <li ng-class="{active: vm.collapseVar==1}" ng-show="vm.is('Manager')">
+                <a href="" ng-click="vm.check(1)" ><i class="fa fa-sitemap fa-fw"></i> Management<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" uib-collapse="vm.collapseVar!=1">
+                    <li>
+                        <a ui-sref="dashboard.submitCompetition"><i></i> Add Competition</a>
+                    </li>
+                    <li>
+                        <a ui-sref="dashboard.places"><i></i> Places</a>
+                    </li>
+                    <li>
+                        <a ui-sref="dashboard.submitPlace"><i></i> Add Place</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li ng-class="{active: vm.collapseVar==2}" ng-show="vm.isAuthenticated">
+                <a href="" ng-click="vm.check(2)">
+                    <i class="fa fa-user fa-fw"></i>
+                        Personnel
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level" uib-collapse="vm.collapseVar!=2">
+                    <li ng-show="vm.isAuthenticated" ng-if="vm.is('Athlete')">
+                        <a ui-sref="dashboard.icons"><i></i> Managers</a>
+                    </li>
+                    <li ng-show="vm.isAuthenticated" ng-if="vm.is('Athlete')">
+                        <a ui-sref="dashboard.buttons"><i></i> Coaches</a>
+                    </li>
+                    <li ng-show="vm.isAuthenticated" ng-if="vm.is('Athlete') || vm.is('Coach') || vm.is('Manager')">
+                        <a ui-sref="dashboard.users"><i></i> Users</a>
+                    </li>
+                    <li ng-show="vm.isAuthenticated" ng-if="!vm.is('Athlete')">
+                        <a ui-sref="dashboard.submitUser"> Add User</a>
+                    </li>
+                </ul>
+            </li>
+            <li ng-class="{active: vm.collapseVar==3}" ng-show="vm.is('Manager')">
+                <a href="" ng-click="vm.check(3)" ><i class="fa fa-sitemap fa-fw"></i> Inventory<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" uib-collapse="vm.collapseVar!=3">
+                    <li>
+                        <a ui-sref="dashboard.panels-wells"><i class="fa fa-car fa-fw"></i> Vehicles</a>
+                    </li>
+                    <li>
+                        <a ui-sref="dashboard.buttons"><i class="fa fa-tasks fa-fw"></i> Equipment</a>
+                    </li>
+                </ul>
+            </li>
+           <!-- <li ng-class="{active: vm.collapseVar==3}">
+                <a href="" ng-click="vm.check(3)"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="vm.collapseVar!=3">
+                    <li>
+                        <a href="">Second Level Item</a>
+                    </li>
+                    <li>
+                        <a href="">Second Level Item</a>
+                    </li>
+                    <li ng-init="third=!third" ng-class="{active: multiCollapseVar==4}">
+                        <a href="" ng-click="vm.multiCheck(4)">Third Level <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level" collapse="multiCollapseVar!=4">
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+
+                        </ul>
+                        &lt;!&ndash; /.nav-third-level &ndash;&gt;
+                    </li>
+                </ul>
+                &lt;!&ndash; /.nav-second-level &ndash;&gt;
+            </li>-->
+            <li ng-class="{active:vm.collapseVar==5}">
+                <a href="" ng-click="vm.check(5)"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" uib-collapse="vm.collapseVar!=5">
+                    <li ng-class="{active: selectedMenu=='blank'}">
+                        <a ui-sref="dashboard.blank" ng-click="selectedMenu='blank'">Blank Page</a>
+                    </li>
+                    <li>
+                        <a ui-sref="login">Login Page</a>
+                    </li>
+                    <li>
+                        <a ui-sref="signup">Sign Up Page</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>

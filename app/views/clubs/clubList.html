@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Clubs</h1>
+    </div>
+</div>
+<div class="row">
+    <table class="table" style="width: 800px">
+        <tr style="background: rgba(13, 102, 97, 0.64)">
+            <th>Name</th>
+            <th>Acronym</th>
+            <th>City</th>
+        </tr>
+        <tr ng-repeat="club in vm.clubs">
+            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+                <a href="app/clubs/{{vm.club._id}}">{{vm.club.name}}</a>
+            </td>
+            <td title="'Acronym'" filter="{ acronym: 'text'}" sortable="'acronym'">{{vm.club.acronym}}</td>
+            <td title="'City'" filter="{ city : 'text'}" sortable="'city'">{{vm.club.address.city}}</td>
+        </tr>
+    </table>
+</div>

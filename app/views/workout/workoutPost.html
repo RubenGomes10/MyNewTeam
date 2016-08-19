@@ -1,0 +1,49 @@
+<div class="col-lg-20" ng-controller="PostWorkoutCtrl">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Add Workout</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-13">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please fill the workout information for submission</h3>
+                </div>
+                <div class="panel-body">
+                    <form name="userForm" role="form" ng-submit="createWorkout()">
+                        <fieldset>
+                            <div class="left_division">
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Title" name="title" ng-model="workout.title" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Duration" name="duration" ng-model="workout.duration" type="number" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Workout Date" name="workoutDate" ng-model="workout.workoutDate" type="text" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" name="state_dropdown" ng-model="workout.state" type="text">
+                                        <option value="Open">Open</option>
+                                        <option value="Scheduled">Scheduled</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Canceled">Canceled</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="right_division">
+                                <div class="form-group">
+                                    <label>Enter workout description here:</label>
+                                    <textarea class="form-control" rows="8" ng-model="workout.description"></textarea>
+                                </div>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <button href="dashboard.workouts" type='submit' class="btn btn-lg btn-success btn-block">Submit workout</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

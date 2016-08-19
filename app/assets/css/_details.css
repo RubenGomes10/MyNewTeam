@@ -1,0 +1,133 @@
+.user-card-image h1,
+.user-card-image h2,
+.user-card-image h3,
+.user-card-image h4,
+.user-card-image h5,
+.user-card-image h6 {
+    position:absolute;
+    bottom:0px;
+    width:100%;
+    color:white;
+    background:rgba(0,0,0,0.65);
+    margin:0px;
+    padding:6px;
+    border:none;
+}
+
+
+.thumbnail .user-card-image{
+    overflow: hidden;
+}
+
+.view{
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    box-shadow: 1px 1px 2px #e6e6e6;
+    cursor: pointer;
+}
+
+.view a img{
+    position: relative;
+    background-size: cover;
+}
+
+.view-first a img {
+    transition: all 0.2s linear;
+}
+
+.view-first:hover a img {
+    transform: scale(1.1);
+}
+
+.view-first .mask {
+    opacity: 0;
+    background-color: rgba(0,0,0,0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.view-first:hover .mask {
+    opacity: 1;
+}
+
+.view .mask, .view .content {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.descripition-header{
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;;
+  font-size: 1.4em;
+}
+
+
+.thumbnail .caption p {
+  margin-left: 0.2em;
+}
+
+.thumbnail .caption p span {
+  margin-right: 0.8em;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #dce0e0;
+}
+
+.top-panel{
+  max-width: 98%;
+  margin: 5% auto;
+}
+
+.panel.top-panel{
+  border: none;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.3);
+  box-shadow: 0 1px 10px rgba(0,0,0,.3);
+}
+
+.profile-wrapper{
+  display: inline-block;
+  width: 100%;
+}
+
+.left-row, .right-row{
+  width: 48%;
+  float: left;
+  margin-left: 1em;
+}
+
+
+@media(max-width:1041px) {
+  .left-row, .right-row{
+    margin-left: 0.6em;
+  }
+}
+
+@media(max-width:960px) {
+  .profile-wrapper{
+    display: block;
+  }
+
+  .left-row, .right-row{
+    float: none;
+    width: 100%;
+    margin : 0;
+    margin: 1.2em auto;
+  }
+}
+
+@media(max-width:768px) {
+  .top-panel{
+    width:75%;
+  }
+}
+
+@media(max-width:480px) {
+  .top-panel{
+    width:90%;
+  }
+}

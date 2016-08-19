@@ -1,0 +1,83 @@
+/* Tables Styles*/
+
+.large-table{
+  max-width: 98%;
+  margin: 10% auto
+}
+
+.table>tbody>tr.ng-enter{
+  animation: bounceInUp 0.8s;
+}
+
+.table>tbody>tr.ng-leave{
+  animation: bounceOut 0.3s;
+}
+
+.table-bordered>tbody>tr>td,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>td,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>thead>tr>th{
+  border: none;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.3);
+  box-shadow: 0 1px 10px rgba(0,0,0,.3);
+  text-align: center;
+}
+
+.table>tbody>tr{
+  transition: all 0.3s;
+}
+
+.table>tbody>tr>td>a{
+  display: block;
+}
+
+.table>tbody>tr>td>button{
+  display: block;
+  background-color: #d9534f;
+  margin: auto;
+}
+.table>tbody>tr>td>button>i{
+  color: #fff;
+  line-height: 1.4em;
+}
+
+.table>tbody>tr:hover{
+  color: #fff;
+  background-color: #298570;
+}
+
+/* ------------ Pagination ------------- */
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover{
+  background-color: #298570;
+  border-color: #206757;
+}
+
+.pagination>li>a, .pagination>li>span{
+  color: #298570;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+    color: #298570;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+
+@media(max-width:768px) {
+
+}
+
+@media(max-width:480px) {
+
+}

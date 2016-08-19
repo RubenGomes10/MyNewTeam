@@ -1,0 +1,169 @@
+<div class="row">
+  <div class="center-form panel">
+    <div class="panel-body">
+      <h4 class="text-center"><i class="fa fa-user-plus"></i> User Registration </h4>
+      <div ng-if="vm.error_message" class="alert alert-danger"> {{vm.error_message}}</div>
+      <form name="registrationForm" ng-submit="vm.registerUser()" novalidate>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Personal Information <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.firstname.$invalid && registrationForm.firstname.$dirty }">
+          <input class="form-control input-lg" type="text" name="firstname" ng-model="vm.user.fullName.first" placeholder="first name" required autofocus>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.firstname.$dirty" ng-messages="registrationForm.firstname.$error">
+            <div ng-message="required">Please enter first name</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.middlename.$invalid && registrationForm.middlename.$dirty }">
+          <input class="form-control input-lg" type="text" name="middlename" ng-model="vm.user.fullName.mid" placeholder="middle name">
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.lastname.$invalid && registrationForm.lastname.$dirty }">
+          <input class="form-control input-lg" type="text" name="lastname" ng-model="vm.user.fullName.last" placeholder="last name" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.lastname.$dirty" ng-messages="registrationForm.lastname.$error">
+            <div ng-message="required">Please enter last name</div>
+          </div>
+        </div>
+        <datepicker date-format="yyyy-MM-dd" selector="form-control">
+            <div class="form-group input-group has-feedback" ng-class="{ 'has-error': registrationForm.birthday.$invalid && registrationForm.birthday.$dirty }">
+            <input class="form-control input-lg" type="text" name="birthday" ng-model="vm.user.birthday" np-pattern="/^[0-9]{4}?[\-]?[0-9]{2}[\-]?[0-9]{2}$/" placeholder="birth date" required>
+            <span><i class="fa fa-calendar form-control-feedback"></i></span>
+            <div class="help-block" ng-if="registrationForm.birthday.$dirty" ng-messages="registrationForm.birthday.$error">
+              <div ng-message="required">Please enter birth date</div>
+              <div ng-message="pattern">The date is invalid. Please verify if the date have the format yyyy-MM-dd.</div>
+            </div>
+          </div>
+        </datepicker>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.phone.$invalid && registrationForm.phone.$dirty }">
+          <input class="form-control input-lg" type="text" name="phone" ng-model="vm.user.phone" placeholder="phone number" ng-pattern="/^[\+]?[0-9]{3}?[0-9]{3}[0-9]{3,6}$/" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.phone.$dirty" ng-messages="registrationForm.phone.$error">
+            <div ng-message="required">Please enter phone number</div>
+            <div ng-message="pattern">The phone number is invalid. Please verify if the phone number have 9 digits or +351 plus 9 digits.</div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Address Information <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.address.$invalid && registrationForm.address.$dirty }">
+          <input class="form-control input-lg" type="text" name="address" ng-model="vm.user.address.street" placeholder="address street" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.address.$dirty" ng-messages="registrationForm.address.$error">
+            <div ng-message="required">Please enter address street</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.location.$invalid && registrationForm.location.$dirty }">
+          <input class="form-control input-lg" type="text" name="location" ng-model="vm.user.location" placeholder="residence location" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.location.$dirty" ng-messages="registrationForm.location.$error">
+            <div ng-message="required">Please enter your residence location </div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.zipcode.$invalid && registrationForm.zipcode.$dirty }">
+          <input class="form-control input-lg" type="text" name="zipcode" ng-model="vm.user.address.zip_code" placeholder="zip code"  ng-pattern='/^(\d{4}-\d{3}?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/' required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.zipcode.$dirty" ng-messages="registrationForm.zipcode.$error">
+            <div ng-message="required">Please enter zip code</div>
+            <div ng-message="pattern">Your zip code is invalid. Please verify if zip code have the format 1111-111</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.city.$invalid && registrationForm.city.$dirty }">
+          <input class="form-control input-lg" type="text" name="city" ng-model="vm.user.address.city" placeholder="city" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.city.$dirty" ng-messages="registrationForm.city.$error">
+            <div ng-message="required">Please enter city</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.country.$invalid && registrationForm.country.$dirty }">
+          <input class="form-control input-lg" type="text" name="country" ng-model="vm.user.address.country" placeholder="country" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.country.$dirty" ng-messages="registrationForm.country.$error">
+            <div ng-message="required">Please enter country</div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Identification Documents <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.nif.$invalid && registrationForm.nif.$dirty }">
+          <input class="form-control input-lg" type="text" name="nif" ng-model="vm.user.documentation.nif" placeholder="nif" ng-pattern="/\d{9}/" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.nif.$dirty" ng-messages="registrationForm.nif.$error">
+            <div ng-message="required">Please enter nif</div>
+            <div ng-message="pattern">Must be a valid 9 digit</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.citizen_card.$invalid && registrationForm.citizen_card.$dirty }">
+          <input class="form-control input-lg" type="text" name="citizen_card" ng-model="vm.user.documentation.citizen_card" placeholder="citizen card" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.citizen_card.$dirty" ng-messages="registrationForm.citizen_card.$error">
+            <div ng-message="required">Please enter citizen card</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.driving_license.$invalid && registrationForm.driving_license.$dirty }">
+          <input class="form-control input-lg" type="text" name="driving_license" ng-model="vm.user.documentation.driving_license" placeholder="driving license" required>
+          <!--<span><i class="fa fa-user form-control-feedback"></i></span>-->
+          <div class="help-block" ng-if="registrationForm.driving_license.$dirty" ng-messages="registrationForm.driving_license.$error">
+            <div ng-message="required">Please enter driving license</div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Account Information <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.email.$invalid && registrationForm.email.$dirty }">
+          <input class="form-control input-lg" type="email" name="email" ng-model="vm.user.email" placeholder="email" required>
+          <span><i class="fa fa-at form-control-feedback"></i></span>
+          <div class="help-block" ng-if="registrationForm.email.$dirty" ng-messages="registrationForm.email.$error">
+            <div ng-message="required">Please enter email</div>
+            <div ng-message="email">Your email address is invalid</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.username.$invalid && registrationForm.username.$dirty }">
+          <input class="form-control input-lg" type="text" name="username" ng-model="vm.user.username" placeholder="username" required>
+          <span><i class="fa fa-user form-control-feedback"></i></span>
+          <div class="help-block" ng-if="registrationForm.username.$dirty" ng-messages="registrationForm.username.$error">
+            <div ng-message="required">Please enter username</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.password.$invalid && registrationForm.password.$dirty }">
+          <input class="form-control input-lg" type="password" name="password" ng-model="vm.user.password" placeholder="password" required>
+          <span><i class="fa fa-key form-control-feedback"></i></span>
+          <div class="help-block" ng-if="registrationForm.password.$dirty" ng-messages="registrationForm.password.$error">
+            <div ng-message="required">Please enter password</div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Role Selection <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.role.$invalid && registrationForm.role.$dirty }">
+          <select class="form-control input-lg" name="role" ng-model="vm.user.role" type="text" required>
+            <option value="">Choose the role for user</option>
+            <option value="Manager">Manager</option>
+            <option value="Coach">Coach</option>
+            <option value="Athlete">Athlete</option>
+          </select>
+          <div class="help-block" ng-if="registrationForm.role.$dirty" ng-messages="registrationForm.role.$error">
+            <div ng-message="required">Please enter the role of user</div>
+          </div>
+        </div>
+        <div ng-if="vm.IsAdmin">
+          <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.dropdown-clubs.$invalid && registrationForm.dropdown-clubs.$dirty }">
+            <select class="form-control input-lg" name="dropdown-clubs" ng-model="vm.user.club" type="text" required>
+              <option value="">Choose the club for user</option>
+              <option ng-repeat="club in vm.clubs" value="{{club._id}}">{{club.name}}</option>
+            </select>
+            <div class="help-block" ng-if="registrationForm.dropdown-clubs.$dirty" ng-messages="registrationForm.dropdown-clubs.$error">
+              <div ng-message="required">Please enter the club of user</div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-block btn-register" ng-disabled="registrationForm.$invalid">Register User</button>
+      </form>
+    </div>
+  </div>
+</div>

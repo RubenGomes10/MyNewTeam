@@ -1,0 +1,200 @@
+input, button {
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .1px;
+  text-rendering: optimizeLegibility;
+}
+
+textarea,
+textarea.form-control,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+[type=text].form-control,
+[type=password].form-control {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 -1px 0 #ddd;
+  box-shadow: inset 0 -1px 0 #ddd;
+  font-size: 16px;
+}
+
+textarea:focus,
+textarea.form-control:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+[type=text].form-control:focus,
+[type=password].form-control:focus {
+  -webkit-box-shadow: inset 0 -2px 0 #2196f3;
+  box-shadow: inset 0 -2px 0 #2196f3;
+}
+
+textarea{
+  max-width: 100%;
+}
+textarea::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+
+.has-error input,
+.has-error .form-control,
+.has-error input:focus,
+.has-error .form-control:focus {
+  -webkit-box-shadow: inset 0 -2px 0 #e51c23;
+  box-shadow: inset 0 -2px 0 #e51c23;
+}
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline {
+  color: #e51c23;
+}
+
+.has-error .form-control {
+  border-color: #e51c23;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+._720kb-datepicker-calendar-body,
+._720kb-datepicker-calendar-days-header,
+._720kb-datepicker-calendar-header,
+._720kb-datepicker-calendar-years-pagination-pages,
+.datepicker, [datepicker],
+datepicker {
+  font-family: inherit;
+  font-size: inherit;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+._720kb-datepicker-calendar-header:nth-child(odd) {
+    background: #298570;
+}
+
+._720kb-datepicker-calendar-header:nth-child(even) {
+    background:#32a389;
+}
+
+.form-group.input-group{
+  display: inherit;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+.help-block {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #a6a6a6;
+}
+
+.text-muted {
+  color: #90939a;
+}
+
+.center-form{
+  max-width: 60%;
+  margin: 10% auto
+}
+
+.login-form {
+  max-width: 375px;
+  margin: 10% auto;
+}
+
+@media(max-width:768px) {
+  .center-form{
+    max-width: 70%;
+  }
+
+  .login-form {
+    max-width: 315px;
+  }
+}
+
+@media(max-width:480px) {
+  .center-form{
+    max-width: 90%;
+  }
+
+  .login-form {
+    max-width: 90%;
+  }
+}
+
+
+.center-form.panel,
+.login-form.panel {
+    border: none;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.3);
+    box-shadow: 0 1px 10px rgba(0,0,0,.3);
+}
+
+[class^='fa-'] {
+  font-size: 1.2em;
+}
+
+.has-feedback {
+  letter-spacing: 0.1rem;
+}
+
+.has-feedback .form-control-feedback {
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  color: #555;
+}
+
+.has-feedback .form-control {
+  padding-left: 42px;
+  letter-spacing: 0.1rem;
+}
+
+.sub-title-or-separator {
+  position: relative;
+  height: 29px;
+  margin: 5px 0;
+  text-align: center;
+  background: none;
+  text-transform: uppercase;
+}
+
+.sub-title-or-separator hr {
+  width: 90%;
+  margin: -16px auto 10px auto;
+  border-top: 1px solid #dce0e0;
+}
+
+.sub-title-or-separator .text {
+  display: inline-block;
+  padding: 8px;
+  margin: 0;
+  background-color: #fff;
+}
+
+.sub-title-or-separator .text span {
+  font-size: 1.4em;
+  color: #e51c23;
+}

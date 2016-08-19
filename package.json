@@ -1,0 +1,33 @@
+{
+  "name": "my-new-team",
+  "version": "1.0.0",
+  "description": "Web plataform for athletics clubs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "bower install&& npm install",
+    "startAll": "npm run build&& nodemon server.js",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "MEAN",
+    "AngularJS",
+    "NodeJS",
+    "ExpressJS",
+    "CSS3",
+	"HTML5",
+	"Responsive Design"
+  ],
+  "authors": [
+    "Rúben Gomes"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "serve-favicon": "^2.3.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0",
+    "nodemon": "^1.10.0"
+  }
+}

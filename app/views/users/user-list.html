@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="btn-add-wrapper">
+    <a role="button" ui-sref="dashboard.submitUser" class="btn btn-block btn-circle push-right btn-add">
+      <i class="fa fa-plus"></i>
+    </a>
+  </div>
+  <div class="large-table">
+    <h4 class="text-center"><i class="fa fa-users"></i> USERS </h4>
+    <table ng-table="vm.tableParams" class="table table-condensed table-bordered table-striped" show-filter="true">
+      <colgroup>
+          <col width="40%" />
+          <col width="25%" />
+          <col width="25%" />
+          <col width="10%" />
+      </colgroup>
+      <tr ng-repeat="user in $data">
+          <td title="'Name'" filter="{ name: 'text'}" sortable="'Name'"><a ui-sref="dashboard.user({id: user._id})">{{user.name}}</a></td>
+          <td title="'Location'" filter="{ location: 'text'}" sortable="'Location'">{{user.location}}</td>
+          <td title="'Role'" filter="{ role : 'select'}" filter-data="vm.getRoles()">{{user.role}}</td>
+          <td title="'Options'" ng-if="vm.isAuthorized()">
+            <button class="btn btn-danger btn-outline" ng-click="vm.deleteUser(user)"><i class="fa fa-trash"></i></button>
+          </td>
+      </tr>
+    </table>
+  </div>
+</div>

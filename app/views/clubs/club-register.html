@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="center-form panel">
+    <div class="panel-body">
+      <h4 class="text-center"><i class="fa fa-plus"></i> Club Registration</h4>
+      <div ng-if="vm.error_message" class="alert alert-danger">{{vm.error_message}}</div>
+      <form name="registrationForm" ng-submit="vm.registerClub()" novalidate>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Basic Information <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.name.$invalid && registrationForm.name.$dirty }">
+          <input class="form-control input-lg" type="text" name="name" ng-model="vm.club.name" placeholder="club name" required autofocus>
+          <div class="help-block" ng-if="registrationForm.name.$dirty" ng-messages="registrationForm.name.$error">
+            <div ng-message="required">Please enter club name</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.acronym.$invalid && registrationForm.acronym.$dirty }">
+          <input class="form-control input-lg" type="text" name="acronym" ng-model="vm.club.acronym" placeholder="club acronym" required>
+          <div class="help-block" ng-if="registrationForm.acronym.$dirty" ng-messages="registrationForm.acronym.$error">
+            <div ng-message="required">Please enter club acronym </div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Address Information <span>&#42;</span></h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.address.$invalid && registrationForm.address.$dirty }">
+          <input class="form-control input-lg" type="text" name="address" ng-model="vm.club.address.street" placeholder="club address street" required>
+          <div class="help-block" ng-if="registrationForm.address.$dirty" ng-messages="registrationForm.address.$error">
+            <div ng-message="required">Please enter club address street</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.zipcode.$invalid && registrationForm.zipcode.$dirty }">
+          <input class="form-control input-lg" type="text" name="zipcode" ng-model="vm.club.address.zip_code" placeholder="club zip code"  ng-pattern='/^(\d{4}-\d{3}?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/' required>
+          <div class="help-block" ng-if="registrationForm.zipcode.$dirty" ng-messages="registrationForm.zipcode.$error">
+            <div ng-message="required">Please enter club zip code</div>
+            <div ng-message="pattern">Zip code is invalid. Please verify if zip code have the format 1111-111</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.city.$invalid && registrationForm.city.$dirty }">
+          <input class="form-control input-lg" type="text" name="city" ng-model="vm.club.address.city" placeholder="club city" required>
+          <div class="help-block" ng-if="registrationForm.city.$dirty" ng-messages="registrationForm.city.$error">
+            <div ng-message="required">Please enter club city</div>
+          </div>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.country.$invalid && registrationForm.country.$dirty }">
+          <input class="form-control input-lg" type="text" name="country" ng-model="vm.club.address.country" placeholder="club country" required>
+          <div class="help-block" ng-if="registrationForm.country.$dirty" ng-messages="registrationForm.country.$error">
+            <div ng-message="required">Please enter club country</div>
+          </div>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Google Maps Information</h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.latitude.$invalid && registrationForm.latitude.$dirty }">
+          <input class="form-control input-lg" type="text" name="latitude" ng-model="vm.club.google.latitude" placeholder="latitude">
+          <span><i class="fa fa-map-marker form-control-feedback"></i></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.longitude.$invalid && registrationForm.longitude.$dirty }">
+          <input class="form-control input-lg" type="text" name="longitude" ng-model="vm.club.google.longitude" placeholder="longitude">
+          <span><i class="fa fa-map-marker form-control-feedback"></i></span>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.mapslink.$invalid && registrationForm.mapslink.$dirty }">
+          <input class="form-control input-lg" type="text" name="mapslink" ng-model="vm.club.google.link" placeholder="google maps link">
+          <span><i class="fa fa-map-marker form-control-feedback"></i></span>
+        </div>
+        <div class="sub-title-or-separator">
+          <h6 class="text">Short Club description</h6>
+          <hr>
+        </div>
+        <div class="form-group has-feedback" ng-class="{ 'has-error': registrationForm.description.$invalid && registrationForm.description.$dirty }">
+          <textarea class="form-control input-lg" rows="8" name="description" ng-model="vm.club.description" placeholder="give a short description of club (Types, Year, Objectives, Fundamentals)."></textarea>
+        </div>
+        <button type="submit" class="btn btn-block btn-register" ng-disabled="registrationForm.$invalid">Register Club</button>
+      </form>
+    </div>
+  </div>
+</div>
