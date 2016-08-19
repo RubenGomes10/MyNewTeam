@@ -12,7 +12,6 @@
 - JSON
 - Gulp
 - API Integration
-- 
 
 ### STATUS ###
 - In progress...
